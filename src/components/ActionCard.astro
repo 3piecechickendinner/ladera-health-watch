@@ -5,9 +5,10 @@ interface Props {
   description: string;
   icon: 'survey' | 'updates' | 'volunteer';
   external?: boolean;
+  ctaLabel?: string;
 }
 
-const { href, title, description, icon, external = false } = Astro.props;
+const { href, title, description, icon, external = false, ctaLabel } = Astro.props;
 
 const icons: Record<Props['icon'], string> = {
   survey:
@@ -43,6 +44,6 @@ const icons: Record<Props['icon'], string> = {
   </span>
   <span class="text-sm leading-relaxed text-oak-700">{description}</span>
   <span class="mt-auto text-sm font-semibold text-gold-700">
-    {external ? 'Open link ↗' : 'Go →'}
+    {ctaLabel ?? (external ? 'Open link ↗' : 'Go →')}
   </span>
 </a>

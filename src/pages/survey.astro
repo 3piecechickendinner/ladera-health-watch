@@ -1,23 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SURVEY_FORM_URL } from '../site.config';
+import { SURVEY_FORM_URL, CONTACT_EMAIL } from '../site.config';
 ---
 
 <BaseLayout
-  title="Health Survey"
-  description="Take the Ladera Health Watch community health survey: voluntary, skippable, and used only in aggregate for community health analysis and advocacy."
+  title="Cancer Registry: Case Reporting Form"
+  description="Report a cancer diagnosis in a Ladera Ranch resident to help build an accurate community registry. Takes 3 to 4 minutes; any question can be skipped."
 >
   <section class="mx-auto max-w-3xl px-5 pb-4 pt-10 sm:pt-14">
     <p class="font-display text-sm font-semibold uppercase tracking-[0.14em] text-gold-700">
-      Help us build an accurate picture
+      Help us build an accurate registry
     </p>
     <h1 class="mt-3 font-display text-4xl font-semibold leading-tight text-oak-900 sm:text-5xl">
-      Health Survey
+      Cancer Registry: Case Reporting Form
     </h1>
     <p class="mt-6 text-lg leading-relaxed text-oak-700">
-      This survey helps us understand the health experiences of Ladera Ranch households so we can
-      pursue an informed, credible community health analysis, and advocate for further review by
-      public health experts and agencies.
+      If you or a family member received a cancer diagnosis while living in Ladera Ranch, your
+      report helps build an accurate community registry. Takes 3 to 4 minutes; any question can
+      be skipped.
     </p>
   </section>
 
@@ -26,36 +26,45 @@ import { SURVEY_FORM_URL } from '../site.config';
       <h2 class="font-display text-xl font-semibold text-oak-900">How your information is used</h2>
       <ul class="mt-4 space-y-3 text-base leading-relaxed text-oak-700">
         <li>
-          <strong class="text-oak-900">Purpose:</strong> responses help us understand community
-          health patterns and support our advocacy, including our request for a California
-          Cancer Registry analysis.
+          <strong class="text-oak-900">Purpose:</strong> reports help us build an accurate
+          community cancer registry and support our advocacy, including our request for a
+          California Cancer Registry analysis.
         </li>
         <li>
-          <strong class="text-oak-900">Aggregation:</strong> data may be aggregated and shared
-          with public health experts or agencies. We do not publish individual responses.
+          <strong class="text-oak-900">Aggregation:</strong> reports may be aggregated and shared
+          with public health experts or agencies. We do not publish individual reports.
         </li>
         <li>
-          <strong class="text-oak-900">Voluntary:</strong> taking this survey is entirely
+          <strong class="text-oak-900">Voluntary:</strong> submitting a report is entirely
           voluntary, and you may skip any question you don't want to answer.
         </li>
         <li>
-          <strong class="text-oak-900">Removal:</strong> you can request that your response be
-          removed at any time by contacting us. See <a href="/get-involved/" class="text-fog-700 underline">Get Involved</a> for contact details.
+          <strong class="text-oak-900">Registry coordinator:</strong> reports go to the registry
+          coordinator, not a public database.
+        </li>
+        <li>
+          <strong class="text-oak-900">Confidentiality:</strong> personally identifying details
+          are never shared publicly.
+        </li>
+        <li>
+          <strong class="text-oak-900">Removal:</strong> you can request that your report be
+          updated or removed at any time by contacting{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-fog-700 underline">{CONTACT_EMAIL}</a>.
         </li>
       </ul>
     </div>
   </section>
 
   <section class="mx-auto max-w-3xl px-5 py-10">
-    <h2 class="font-display text-xl font-semibold text-oak-900">Take the survey</h2>
+    <h2 class="font-display text-xl font-semibold text-oak-900">Report a case</h2>
     <div class="mt-4 border border-oak-700/25 bg-paper-50 p-2">
       <iframe
         src={`${SURVEY_FORM_URL}${SURVEY_FORM_URL.includes('?') ? '&' : '?'}embedded=true`}
-        title="Ladera Health Watch community health survey"
+        title="Ladera Health Watch cancer registry case reporting form"
         class="h-[600px] w-full"
         loading="lazy"
       >
-        Loading survey…
+        Loading form…
       </iframe>
     </div>
     <a
@@ -64,7 +73,7 @@ import { SURVEY_FORM_URL } from '../site.config';
       rel="noopener noreferrer"
       class="mt-4 inline-block border border-gold-600 bg-gold-600 px-5 py-3 font-semibold text-paper-50 no-underline hover:bg-gold-700"
     >
-      Open the survey in a new tab ↗
+      Report a case ↗
     </a>
   </section>
 </BaseLayout>

@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION =
 export const SITE_URL = 'https://ladera-health-watch.onrender.com';
 
 export const SURVEY_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLScoVS05sh4rVlugue0yNQin1IueERH5VFb-HGrkRtP9OQCS0g/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSflQVwtGA0YMLdk_8I6VSBtWVyfA5CxowApvo0xN-TEO-XOKg/viewform';
 
 export const VOLUNTEER_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfQRYig-IQ7e-6iE0aSLAUW-lP4a3a3l6v_AIZ3jLXU9bY7Pg/viewform';
@@ -40,6 +40,6 @@ export const LARMAC_IPM_NOTICES_URL = 'https://www.laderalife.com/TODO-REPLACE-W
 export const NAV_LINKS = [
   { href: '/what-we-know/', label: 'What We Know' },
   { href: '/news/', label: 'News' },
-  { href: '/survey/', label: 'Health Survey' },
+  { href: '/survey/', label: 'Report a Case' },
   { href: '/get-involved/', label: 'Get Involved' },
 ];
