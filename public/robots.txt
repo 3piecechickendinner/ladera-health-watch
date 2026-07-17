@@ -1,0 +1,6 @@
+# TODO: if the final domain differs from astro.config.mjs's `site` value,
+# update the Sitemap URL below to match.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.laderahealthwatch.org/sitemap-index.xml

@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Design tokens — derived from Ladera Ranch's landscape (oak canopy, sage
+   scrub, coastal fog, dry summer hills). See DESIGN.md for rationale. */
+@theme {
+  --color-oak-900: #212b1d;
+  --color-oak-700: #3a4a32;
+  --color-oak-600: #4b5e40;
+  --color-sage-500: #7c8b72;
+  --color-sage-300: #b7c0ac;
+  --color-sage-100: #dfe4d6;
+  --color-paper-100: #eff0e7;
+  --color-paper-50: #f7f7f0;
+  --color-fog-600: #51707a;
+  --color-fog-700: #3d5860;
+  --color-gold-600: #a97726;
+  --color-gold-700: #8a611e;
+
+  --font-display: "Zilla Slab", "Georgia", serif;
+  --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-paper-100);
+    color: var(--color-oak-900);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-oak-900);
+  }
+
+  /* Visible keyboard focus everywhere — no outline: none anywhere in this project. */
+  :focus-visible {
+    outline: 3px solid var(--color-fog-700);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Quiet topographic contour-line texture, used as a watermark behind content
+   instead of a gradient hero. Applied via ::before (not background+opacity
+   on the element itself) so it never fades the real content inside. */
+.contour-texture {
+  position: relative;
+}
+
+.contour-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23212b1d' stroke-width='1'%3E%3Cpath d='M-20 60 Q 100 10, 220 60 T 460 60'/%3E%3Cpath d='M-20 110 Q 100 60, 220 110 T 460 110'/%3E%3Cpath d='M-20 160 Q 100 110, 220 160 T 460 160'/%3E%3Cpath d='M-20 210 Q 100 160, 220 210 T 460 210'/%3E%3Cpath d='M-20 260 Q 100 210, 220 260 T 460 260'/%3E%3Cpath d='M-20 310 Q 100 260, 220 310 T 460 310'/%3E%3C/g%3E%3C/svg%3E");
+}

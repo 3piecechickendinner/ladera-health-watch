@@ -1,0 +1,37 @@
+---
+import { SITE_NAME, CONTACT_EMAIL, FACEBOOK_GROUP_URL, NAV_LINKS } from '../site.config';
+import HealthDisclaimer from './HealthDisclaimer.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-oak-700/20 bg-paper-50">
+  <div class="mx-auto max-w-5xl px-5 py-10">
+    <div class="grid gap-8 sm:grid-cols-2">
+      <div>
+        <p class="font-display text-lg font-semibold text-oak-900">{SITE_NAME}</p>
+        <p class="mt-2 max-w-sm text-sm leading-relaxed text-oak-700">
+          A volunteer effort by Ladera Ranch parents and residents.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href={FACEBOOK_GROUP_URL} class="text-fog-700 underline">Facebook group</a>
+          {' · '}
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-fog-700 underline">{CONTACT_EMAIL}</a>
+        </p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-oak-700">
+          <li><a href="/" class="no-underline hover:text-fog-700 hover:underline">Home</a></li>
+          {NAV_LINKS.map((link) => (
+            <li><a href={link.href} class="no-underline hover:text-fog-700 hover:underline">{link.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-8 border-t border-oak-700/20 pt-6">
+      <HealthDisclaimer />
+      <p class="mt-3 text-xs text-sage-500">© {year} {SITE_NAME}. Volunteer-run.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Ledger from '../components/Ledger.astro';
+import { LARMAC_IPM_NOTICES_URL } from '../site.config';
+
+const knowItems = [
+  'Self-reported Ewing sarcoma diagnoses in Ladera Ranch children across 2007, 2013, 2017, 2021, 2022, 2023, and 2024',
+  'Additional self-reported cancer cases among Ladera Ranch residents and pets',
+  'Regular pesticide, herbicide, and rodenticide applications in common areas, documented in LARMAC notices',
+  'CUSD records show the product Cheetah Pro (glufosinate-ammonium) was applied at several Ladera Ranch school sites in 2026',
+  'A California Cancer Registry analysis was formally requested in May 2026; results are pending',
+  'On July 8, 2026, LARMAC agreed to form a resident advisory committee on Integrated Pest Management',
+];
+
+const dontKnowItems = [
+  'Whether cancer rates in Ladera Ranch exceed state baselines',
+  'What caused any individual case, including the ones reported here',
+  'Whether any environmental factor (pesticides, herbicides, rodenticides, water, or something else) is involved',
+  'Whether the number or timing of cases reported here is statistically unusual for a community this size',
+];
+
+const timeline = [
+  {
+    when: 'May 2026',
+    what: 'Requested a formal analysis from the California Cancer Registry',
+    detail: 'Result: pending. We will publish whatever the registry finds.',
+  },
+  {
+    when: 'May–June 2026',
+    what: 'Filed public records requests with LARMAC and CUSD',
+    detail: 'Requesting pesticide, herbicide, and rodenticide application records for common areas and school sites.',
+  },
+  {
+    when: 'July 8, 2026',
+    what: 'Raised these questions at the LARMAC board meeting',
+    detail: 'A constructive conversation with the board, who are resident volunteers like us.',
+  },
+  {
+    when: 'Ongoing',
+    what: 'Resident advisory committee on Integrated Pest Management is forming',
+    detail: 'See News & Updates for how to get involved as it stands up.',
+  },
+];
+---
+
+<BaseLayout
+  title="What We Know"
+  description="An honest ledger of what Ladera Health Watch does and does not know about self-reported cancer cases and environmental records in Ladera Ranch."
+>
+  <section class="mx-auto max-w-4xl px-5 pb-4 pt-10 sm:pt-14">
+    <p class="font-display text-sm font-semibold uppercase tracking-[0.14em] text-gold-700">
+      The full picture
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-semibold leading-tight text-oak-900 sm:text-5xl">
+      What we know. What we don't.
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-oak-700">
+      We are asking reasonable questions and requesting reasonable changes, not making claims we
+      can't support. This page lays out, as plainly as we can, the difference between what has
+      been documented and what remains genuinely unknown.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-6">
+    <Ledger knowItems={knowItems} dontKnowItems={dontKnowItems} />
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-10">
+    <h2 class="font-display text-2xl font-semibold text-oak-900">Timeline of the effort</h2>
+    <ol class="mt-6 space-y-6 border-l-2 border-sage-300 pl-6">
+      {timeline.map((step) => (
+        <li class="relative">
+          <span
+            class="absolute -left-[1.65rem] mt-1.5 block h-3 w-3 rounded-full bg-gold-600"
+            aria-hidden="true"
+          ></span>
+          <p class="text-sm font-semibold uppercase tracking-wide text-sage-500">{step.when}</p>
+          <p class="mt-1 font-display text-lg font-semibold text-oak-900">{step.what}</p>
+          <p class="mt-1 text-base leading-relaxed text-oak-700">{step.detail}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-10">
+    <div class="border border-oak-700/25 bg-paper-50 p-6">
+      <h2 class="font-display text-xl font-semibold text-oak-900">A note on environmental cause</h2>
+      <p class="mt-3 text-base leading-relaxed text-oak-700">
+        There is no known environmental cause of Ewing sarcoma. Several experts have told us this
+        is worth looking into, and that environmental records, especially water and
+        pesticide/herbicide use, are the practical place to start. That's why our records
+        requests focus there. It is not a claim that any product or practice has caused any
+        cancer.
+      </p>
+    </div>
+  </section>
+
+  <section id="pesticide-notices" class="mx-auto max-w-4xl scroll-mt-20 px-5 py-10">
+    <h2 class="font-display text-2xl font-semibold text-oak-900">Reading pesticide notices</h2>
+    <p class="mt-3 max-w-2xl text-base leading-relaxed text-oak-700">
+      LARMAC posts notices before applying pesticides, herbicides, and rodenticides in common
+      areas. Here's a plain-language guide to what those notices say, so residents can read them
+      with confidence. This isn't a claim that any specific product is dangerous.
+    </p>
+
+    <div class="mt-5 grid gap-3 sm:grid-cols-3">
+      <div class="border border-oak-700/25 bg-paper-50 p-4">
+        <p class="text-xs font-semibold uppercase tracking-wide text-sage-500">Product</p>
+        <p class="mt-2 text-sm leading-relaxed text-oak-700">
+          The brand name and usually the active ingredient. Look up either one; see below.
+        </p>
+      </div>
+      <div class="border border-oak-700/25 bg-paper-50 p-4">
+        <p class="text-xs font-semibold uppercase tracking-wide text-sage-500">Location</p>
+        <p class="mt-2 text-sm leading-relaxed text-oak-700">
+          Which common area or landscaping zone the application covers.
+        </p>
+      </div>
+      <div class="border border-oak-700/25 bg-paper-50 p-4">
+        <p class="text-xs font-semibold uppercase tracking-wide text-sage-500">Date</p>
+        <p class="mt-2 text-sm leading-relaxed text-oak-700">
+          The application date, and often a posting date in advance of it.
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-5 text-base leading-relaxed text-oak-700">
+      Many notices mention a <em>"restricted entry interval"</em> (REI): standard, required label
+      language stating how long to wait after an application before re-entering the treated area
+      without protective equipment. It's routine on pesticide labels generally, not something
+      specific to Ladera Ranch or to any one incident.
+    </p>
+
+    <ul class="mt-5 space-y-2 text-base leading-relaxed text-oak-700">
+      <li>
+        <strong class="text-oak-900">Official notices:</strong> LARMAC posts its IPM (Integrated
+        Pest Management) and spray notices at
+        <a href={LARMAC_IPM_NOTICES_URL} class="text-fog-700 underline" target="_blank" rel="noopener noreferrer">
+          laderalife.com ↗
+        </a>.
+        <span class="text-sm text-sage-500">(TODO: confirm this is the current path.)</span>
+      </li>
+      <li>
+        <strong class="text-oak-900">Product labels and safety data sheets:</strong> search the
+        product name plus "safety data sheet" (SDS, or older, "MSDS") for the manufacturer's own
+        label, ingredients, and handling guidance.
+      </li>
+    </ul>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-10">
+    <div class="border border-sage-300 bg-paper-50 p-6">
+      <h2 class="font-display text-lg font-semibold text-oak-900">Community Map</h2>
+      <p class="mt-2 text-base leading-relaxed text-oak-700">
+        We're building a map showing aggregated, anonymized case counts, never individual homes
+        or identifiable cases. An aggregate map is
+        <a href="/map/" class="text-fog-700 underline">coming soon</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
