@@ -26,37 +26,50 @@ your browser. The page updates automatically as files change. Press
 ## 2. Deploying the site
 
 The site builds to plain HTML/CSS/JS, so it can be hosted anywhere that
-serves static files. The easiest options are **Netlify** or **Vercel**: both
-have a free tier and both work the same way:
+serves static files. **Netlify**, **Vercel**, and **Render** all have a free
+tier and all work basically the same way:
 
 1. Push this project to a GitHub repository (ask a technical volunteer for
    help with this step if you haven't used git/GitHub before).
-2. Go to [netlify.com](https://www.netlify.com) or [vercel.com](https://vercel.com),
-   sign up, and choose "Import from GitHub" (wording varies slightly by
-   provider).
+2. Sign up at [render.com](https://render.com) (or
+   [netlify.com](https://www.netlify.com) / [vercel.com](https://www.vercel.com))
+   and choose "New Static Site" (Render's wording; the other two say "Import
+   from GitHub").
 3. Select this repository. The build settings should be auto-detected as an
-   Astro project:
+   Astro project, but confirm:
    - **Build command:** `npm run build`
-   - **Output/publish directory:** `dist`
-4. Click deploy. You'll get a temporary `*.netlify.app` or `*.vercel.app`
-   address you can share immediately to test.
+   - **Publish/output directory:** `dist`
+4. Click deploy. You'll get a temporary address you can share immediately to
+   test: `*.onrender.com` on Render, or `*.netlify.app` / `*.vercel.app` on
+   the other two.
+5. **If you're starting on a `.onrender.com` address before a custom domain
+   is attached:** update `site:` in `astro.config.mjs` and `SITE_URL` in
+   `src/site.config.ts` to that `.onrender.com` URL for now (and the
+   `Sitemap:` line in `public/robots.txt` to match). These values drive the
+   sitemap, canonical links, and the share-image domain text, so they need to
+   point at wherever the site actually lives. Change them again later when
+   the real domain goes live (see step 3 below), and re-run `npm run og` if
+   the OG image's domain text needs to match.
 
 ## 3. Pointing the purchased domain
 
 Once you have a deploy working on the temporary address above:
 
-1. In Netlify or Vercel's dashboard, find **Domain settings** (sometimes
-   called "Custom domains") for this project.
+1. In Render's dashboard, find **Custom Domains** for this static site
+   (Netlify/Vercel call this "Domain settings").
 2. Add the domain you already purchased.
 3. The dashboard will show you 1–2 DNS records to add (usually a `CNAME` or an
    `A` record). Log into wherever the domain was purchased (GoDaddy,
    Namecheap, Google Domains, etc.), find its DNS settings, and add the
    records exactly as shown.
 4. DNS changes can take anywhere from a few minutes to a few hours to take
-   effect. Netlify/Vercel will show a green checkmark once it's live.
-5. Also update `site:` in `astro.config.mjs` and the `Sitemap:` line in
-   `public/robots.txt` to match the final domain. Search results and social
-   media link previews depend on this being correct.
+   effect. Render/Netlify/Vercel will show a green checkmark once it's live.
+5. Update `site:` in `astro.config.mjs`, `SITE_URL` in `src/site.config.ts`,
+   and the `Sitemap:` line in `public/robots.txt` to the final domain
+   (replacing the temporary `.onrender.com` address if you set one in step
+   2 above). Search results, social media link previews, and the OG image's
+   domain text all depend on this being correct. Re-run `npm run og` after
+   changing it.
 
 ## 4. Adding a News & Updates post
 

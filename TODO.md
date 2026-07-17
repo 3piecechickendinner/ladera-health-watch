@@ -11,7 +11,7 @@ grep -rn "TODO" src public astro.config.mjs
 ## Must supply before launch
 
 - [ ] **Site name**: currently "Ladera Health Watch" in `src/site.config.ts` (`SITE_NAME`). Change it there once the group finalizes the name; every page pulls from this one place.
-- [ ] **Domain**: set the real domain in `astro.config.mjs` (`site:`) and in `public/robots.txt` (the `Sitemap:` line).
+- [ ] **Domain**: deploying on Render for now, so set the temporary `.onrender.com` URL in `astro.config.mjs` (`site:`), `src/site.config.ts` (`SITE_URL`), and `public/robots.txt` (the `Sitemap:` line); update all three again once a custom domain is attached. See README section 2 and 3.
 - [x] **Health survey form URL**: set in `src/site.config.ts` (`SURVEY_FORM_URL`).
 - [x] **Volunteer sign-up form URL**: set in `src/site.config.ts` (`VOLUNTEER_FORM_URL`).
 - [ ] **Contact email**: `CONTACT_EMAIL` in `src/site.config.ts`.
