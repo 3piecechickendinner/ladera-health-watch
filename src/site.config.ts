@@ -23,15 +23,8 @@ export const CONTACT_EMAIL = 'sd@databackfill.com';
 
 export const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/186166214769732';
 
-// Shared Formspree account across the group's projects. EmailCapture.astro
-// tags every submission with a hidden "source" field set to SITE_NAME, so
-// signups from this site are identifiable in the Formspree dashboard/email
-// alongside submissions from other projects using the same form.
-export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjepdzk';
-
-// Footer newsletter signup (NewsletterSignup.astro). Currently the same
-// Formspree form as FORMSPREE_ENDPOINT above; kept as its own variable so it
-// can be pointed at a different form later without touching the component.
+// Footer newsletter signup (NewsletterSignup.astro), shared Formspree
+// account across the group's projects.
 export const FORMSPREE_SIGNUP_ACTION = 'https://formspree.io/f/mnjepdzk';
 
 // TODO: confirm current LARMAC IPM / spray-notice page URL (laderalife.com structure may change).

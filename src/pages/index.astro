@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Ledger from '../components/Ledger.astro';
 import ActionCard from '../components/ActionCard.astro';
-import EmailCapture from '../components/EmailCapture.astro';
 import { SURVEY_FORM_URL, FACEBOOK_GROUP_URL, SITE_TAGLINE } from '../site.config';
 
 const compactKnow = [
@@ -73,13 +72,6 @@ const compactDontKnow = [
         description="Help with records requests, research, outreach, design, or data, however much time you have."
         icon="volunteer"
       />
-    </div>
-
-    <div class="mt-8 max-w-md">
-      <p class="text-sm font-semibold text-oak-900">Prefer email updates instead?</p>
-      <div class="mt-2">
-        <EmailCapture />
-      </div>
     </div>
   </section>
 </BaseLayout>
