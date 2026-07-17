@@ -14,7 +14,7 @@ grep -rn "TODO" src public astro.config.mjs
 - [x] **Domain**: set to `https://ladera-health-watch.onrender.com` in `astro.config.mjs` (`site:`), `src/site.config.ts` (`SITE_URL`), and `public/robots.txt` (the `Sitemap:` line). Update all three again once a custom domain is attached. See README section 2 and 3.
 - [x] **Health survey form URL**: set in `src/site.config.ts` (`SURVEY_FORM_URL`).
 - [x] **Volunteer sign-up form URL**: set in `src/site.config.ts` (`VOLUNTEER_FORM_URL`).
-- [ ] **Contact email**: `CONTACT_EMAIL` in `src/site.config.ts` is temporarily set to `sd@databackfill.com`. Replace with the group's real, monitored inbox before launch.
+- [x] **Contact email**: set in `src/site.config.ts` (`CONTACT_EMAIL`) to `laderahealthwatch@gmail.com`.
 - [x] **Facebook group URL**: set in `src/site.config.ts` (`FACEBOOK_GROUP_URL`).
 - [ ] **LARMAC IPM/spray notices page URL**: confirm `LARMAC_IPM_NOTICES_URL` in `src/site.config.ts` (laderalife.com's structure may change).
 - [ ] **NBC Los Angeles article URL**: `externalUrl` in `src/content/news/2026-07-01-nbc-los-angeles-coverage.md`. Add any other press coverage as additional files in the same format.
