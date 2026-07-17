@@ -29,17 +29,23 @@ export const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/1861662147697
 // alongside submissions from other projects using the same form.
 export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjepdzk';
 
+// Footer newsletter signup (NewsletterSignup.astro). Currently the same
+// Formspree form as FORMSPREE_ENDPOINT above; kept as its own variable so it
+// can be pointed at a different form later without touching the component.
+export const FORMSPREE_SIGNUP_ACTION = 'https://formspree.io/f/mnjepdzk';
+
 // TODO: confirm current LARMAC IPM / spray-notice page URL (laderalife.com structure may change).
 export const LARMAC_IPM_NOTICES_URL = 'https://www.laderalife.com/TODO-REPLACE-WITH-IPM-NOTICES-PATH';
 
-// Nav is deliberately kept to four items for mobile readers arriving from
-// Facebook. Home is reached via the site name in the header, not a nav item.
-// Pesticide Notices lives on /what-we-know/ as a section; About and contact
-// live on /get-involved/; Community Map stays live at /map/ but is only
-// linked from What We Know ("aggregate map coming soon"), not in nav.
+// Nav is deliberately kept short for mobile readers arriving from Facebook.
+// Home is reached via the site name in the header, not a nav item.
+// Pesticide Notices lives on /what-we-know/ as a section; Community Map
+// stays live at /map/ but is only linked from What We Know ("aggregate map
+// coming soon"), not in nav.
 export const NAV_LINKS = [
   { href: '/what-we-know/', label: 'What We Know' },
   { href: '/news/', label: 'News' },
   { href: '/survey/', label: 'Report a Case' },
   { href: '/get-involved/', label: 'Get Involved' },
+  { href: '/about/', label: 'About' },
 ];

@@ -1,0 +1,44 @@
+---
+import { FORMSPREE_SIGNUP_ACTION, SITE_URL } from '../site.config';
+
+const thanksURL = new URL('/thanks/', SITE_URL).toString();
+---
+
+<div class="text-center">
+  <h2 class="font-display text-2xl font-semibold text-oak-900 sm:text-3xl">
+    Stay Informed. Stay Involved.
+  </h2>
+
+  <form
+    action={FORMSPREE_SIGNUP_ACTION}
+    method="POST"
+    class="mx-auto mt-5 flex max-w-md flex-col gap-3 sm:flex-row"
+  >
+    <label for="newsletter-email-input" class="sr-only">Email address</label>
+    <input
+      id="newsletter-email-input"
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      class="min-w-0 flex-1 border border-oak-700/30 bg-paper-50 px-4 py-3 text-base text-oak-900 placeholder:text-sage-500"
+    />
+    <button
+      type="submit"
+      class="border border-gold-600 bg-gold-600 px-5 py-3 font-semibold text-paper-50 hover:bg-gold-700 sm:shrink-0"
+    >
+      Sign up
+    </button>
+
+    <input type="hidden" name="_subject" value="New updates signup" />
+    <input type="hidden" name="_next" value={thanksURL} />
+    {/* Formspree honeypot: real visitors never fill this in, bots often do. */}
+    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  </form>
+
+  <p class="mx-auto mt-4 max-w-[55ch] text-sm leading-relaxed text-oak-700">
+    Sign up to receive updates on health and environmental issues affecting Orange County,
+    including research, public records, community meetings, and opportunities to get involved.
+    No spam, just important updates from concerned residents.
+  </p>
+</div>

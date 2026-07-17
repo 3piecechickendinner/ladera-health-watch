@@ -18,11 +18,12 @@ export default defineConfig({
 
   integrations: [sitemap()],
 
-  // Old standalone pages were merged into other pages for a leaner mobile nav
-  // (see src/site.config.ts). These keep any existing links from 404ing.
+  // Pesticide Notices was merged into What We Know as a section for a
+  // leaner mobile nav (see src/site.config.ts). This keeps any existing
+  // links from 404ing. (About was previously merged into Get Involved too,
+  // but is now back as its own page at /about/.)
   redirects: {
     '/pesticide-notices': '/what-we-know/#pesticide-notices',
-    '/about': '/get-involved/#about',
   },
 
   // The dev-only floating toolbar (bottom-center pill with icons) is an Astro

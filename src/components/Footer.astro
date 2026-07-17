@@ -1,13 +1,16 @@
 ---
 import { SITE_NAME, CONTACT_EMAIL, FACEBOOK_GROUP_URL, NAV_LINKS } from '../site.config';
 import HealthDisclaimer from './HealthDisclaimer.astro';
+import NewsletterSignup from './NewsletterSignup.astro';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="mt-16 border-t border-oak-700/20 bg-paper-50">
   <div class="mx-auto max-w-5xl px-5 py-10">
-    <div class="grid gap-8 sm:grid-cols-2">
+    <NewsletterSignup />
+
+    <div class="mt-10 grid gap-8 border-t border-oak-700/20 pt-8 sm:grid-cols-2">
       <div>
         <p class="font-display text-lg font-semibold text-oak-900">{SITE_NAME}</p>
         <p class="mt-2 max-w-sm text-sm leading-relaxed text-oak-700">

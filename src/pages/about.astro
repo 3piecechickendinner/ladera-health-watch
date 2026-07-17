@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImageSlot from '../components/ImageSlot.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Ladera Health Watch is a resident-led organization collecting and sharing public records, research, and community updates on public health and environmental issues in Orange County."
+>
+  <section class="mx-auto max-w-4xl px-5 pb-4 pt-10 sm:pt-14">
+    <p class="font-display text-sm font-semibold uppercase tracking-[0.14em] text-gold-700">
+      Who we are
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-semibold leading-tight text-oak-900 sm:text-5xl">
+      About
+    </h1>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-6">
+    <div class="space-y-6 text-lg leading-relaxed text-oak-700">
+      <p>
+        Ladera Health Watch is a resident-led organization dedicated to collecting, organizing,
+        and sharing public records, scientific research, government data, news coverage, and
+        community updates related to public health and environmental issues.
+      </p>
+      <p>
+        The grassroots effort began in Ladera Ranch, where residents came together to seek
+        greater transparency and answers regarding local health and environmental concerns.
+        Reports of several recent cases of the rare cancer Ewing sarcoma within the community
+        have further propelled many residents to seek information, ask questions, and advocate
+        for greater transparency and accountability. As more residents from communities across
+        Orange County have reached out with similar questions and concerns, the effort continues
+        to grow into a broader platform for information, collaboration, and civic engagement.
+      </p>
+      <p>
+        Our work focuses on topics such as environmental exposures, pesticide use, water and soil
+        quality, air quality, public transparency, and evidence-based solutions that help create
+        healthier communities.
+      </p>
+      <p>
+        We provide a place for residents to access information, ask questions, share updates,
+        and engage in respectful, fact-based discussion. By improving access to reliable
+        information and encouraging civic engagement, we aim to promote transparency,
+        accountability, and healthier neighborhoods throughout Orange County.
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <ImageSlot subject="Ladera Health Watch volunteers or a community meeting" aspectClass="aspect-[16/9]" />
+    </div>
+  </section>
+</BaseLayout>

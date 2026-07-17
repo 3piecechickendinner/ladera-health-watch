@@ -98,8 +98,8 @@ No coding required. Every post is one markdown (`.md`) file in
 **Please keep every post consistent with the group's framing:** no naming
 affected children or families, no claiming a cancer cluster has been found,
 no accusing any person/product/company/agency of causing cancer. See the
-"About Ladera Health Watch" section on `/get-involved/` on the live site for
-the exact language to reuse if in doubt.
+homepage's callout ("No cancer cluster has been officially determined...")
+for the exact language to reuse if in doubt.
 
 ## Project structure
 
