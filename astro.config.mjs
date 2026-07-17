@@ -7,9 +7,11 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: replace with the group's real domain once the site name is finalized.
+  // Temporary Render address. TODO: replace with the group's real domain
+  // once one is attached (see README section 3). Keep this in sync with
+  // SITE_URL in src/site.config.ts and the Sitemap line in public/robots.txt.
   // Sitemap and canonical/OG URLs are generated from this.
-  site: 'https://www.laderahealthwatch.org',
+  site: 'https://ladera-health-watch.onrender.com',
   vite: {
     plugins: [tailwindcss()]
   },

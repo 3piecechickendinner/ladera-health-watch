@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.laderahealthwatch.org/sitemap-index.xml
+Sitemap: https://ladera-health-watch.onrender.com/sitemap-index.xml
