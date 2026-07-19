@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION =
 export const SITE_URL = 'https://ladera-health-watch.onrender.com';
 
 export const SURVEY_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSflQVwtGA0YMLdk_8I6VSBtWVyfA5CxowApvo0xN-TEO-XOKg/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSeDWdV0bKIk7hvJDlHqnbuPByQ8YTGctX7hvhVhvq0FC3gxVg/viewform';
 
 export const VOLUNTEER_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfQRYig-IQ7e-6iE0aSLAUW-lP4a3a3l6v_AIZ3jLXU9bY7Pg/viewform';
