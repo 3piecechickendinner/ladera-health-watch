@@ -19,6 +19,44 @@ const dontKnowItems = [
   'Whether the number or timing of cases reported here is statistically unusual for a community this size',
 ];
 
+// Kept as one array so the visible FAQ section below and the FAQPage
+// structured data always match exactly (Google requires this).
+const faqItems = [
+  {
+    question: 'Is there a cancer cluster in Ladera Ranch?',
+    answer:
+      'No cancer cluster has been officially determined in Ladera Ranch. Formal cancer cluster findings are rare, even in communities that pursue them for years, per CDC/ATSDR guidelines.',
+  },
+  {
+    question: 'What caused the cancer cases reported in Ladera Ranch?',
+    answer:
+      "We do not know. Ladera Health Watch has not identified a cause for any individual case, and no formal cause has been determined.",
+  },
+  {
+    question: 'Does pesticide or herbicide use cause Ewing sarcoma?',
+    answer:
+      'There is no known environmental cause of Ewing sarcoma, according to the American Cancer Society. Ladera Health Watch is not claiming that pesticides, herbicides, or any other product or practice has caused any cancer. Environmental records are simply a practical place to start asking questions.',
+  },
+  {
+    question: 'Are cancer rates in Ladera Ranch higher than the rest of California?',
+    answer:
+      "We do not yet have confirmation that cancer rates in Ladera Ranch exceed California's state baseline. Ladera Health Watch has requested a formal analysis from the California Cancer Registry to help answer this question.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 const timeline = [
   {
     when: 'May 2026',
@@ -46,6 +84,7 @@ const timeline = [
 <BaseLayout
   title="What We Know"
   description="An honest ledger of what Ladera Health Watch does and does not know about self-reported cancer cases and environmental records in Ladera Ranch."
+  structuredData={faqSchema}
 >
   <section class="mx-auto max-w-4xl px-5 pb-4 pt-10 sm:pt-14">
     <p class="font-display text-sm font-semibold uppercase tracking-[0.14em] text-gold-700">
@@ -63,6 +102,20 @@ const timeline = [
 
   <section class="mx-auto max-w-4xl px-5 py-6">
     <Ledger knowItems={knowItems} dontKnowItems={dontKnowItems} />
+  </section>
+
+  <section class="mx-auto max-w-4xl px-5 py-10">
+    <h2 class="font-display text-2xl font-semibold text-oak-900">Common questions</h2>
+    <div class="mt-6 divide-y divide-oak-700/15 border-y border-oak-700/15">
+      {faqItems.map((item) => (
+        <details class="py-4">
+          <summary class="cursor-pointer font-display text-lg font-semibold text-oak-900">
+            {item.question}
+          </summary>
+          <p class="mt-2 text-base leading-relaxed text-oak-700">{item.answer}</p>
+        </details>
+      ))}
+    </div>
   </section>
 
   <section class="mx-auto max-w-4xl px-5 py-10">
@@ -86,7 +139,15 @@ const timeline = [
     <div class="border border-oak-700/25 bg-paper-50 p-6">
       <h2 class="font-display text-xl font-semibold text-oak-900">A note on environmental cause</h2>
       <p class="mt-3 text-base leading-relaxed text-oak-700">
-        There is no known environmental cause of Ewing sarcoma. Several experts have told us this
+        There is no known environmental cause of Ewing sarcoma, according to the{' '}
+        <a
+          href="https://www.cancer.org/cancer/types/ewing-tumor/causes-risks-prevention.html"
+          class="text-fog-700 underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          American Cancer Society
+        </a>. Several experts have told us this
         is worth looking into, and that environmental records, especially water and
         pesticide/herbicide use, are the practical place to start. That's why our records
         requests focus there. It is not a claim that any product or practice has caused any

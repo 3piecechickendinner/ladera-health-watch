@@ -41,7 +41,16 @@ const { knowItems, dontKnowItems, compact = false } = Astro.props;
   </div>
   {!compact && (
     <p class="border-t border-oak-700/25 px-5 py-3 text-sm text-sage-500 md:px-7">
-      No cancer cluster has been officially determined in Ladera Ranch. Formal cancer cluster findings are rare, even in communities that pursue them for years.
+      No cancer cluster has been officially determined in Ladera Ranch. Formal cancer cluster
+      findings are rare, even in communities that pursue them for years, per{' '}
+      <a
+        href="https://www.cdc.gov/cancer-environment/php/guidelines/index.html"
+        class="underline hover:text-oak-700"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CDC/ATSDR guidelines
+      </a>.
     </p>
   )}
 </div>

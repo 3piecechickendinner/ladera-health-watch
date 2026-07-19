@@ -154,11 +154,20 @@ This is already built in:
 - **Per-page meta titles/descriptions and Open Graph tags** (see every page's
   `<BaseLayout title=... description=...>` call).
 - **Structured data (JSON-LD)**: an Organization schema on every page
-  (`src/layouts/BaseLayout.astro`), plus an Article schema on every News &
-  Updates post (`src/pages/news/[slug].astro`). This is what lets Google
-  Rich Results and AI answer engines (ChatGPT browsing, Perplexity, Google AI
-  Overviews) pull structured facts about the site instead of guessing from
-  prose.
+  (`src/layouts/BaseLayout.astro`), an Article schema on every News &
+  Updates post (`src/pages/news/[slug].astro`), and an FAQPage schema on
+  `/what-we-know/` built from the same `faqItems` array as its visible
+  "Common questions" section (`src/pages/what-we-know.astro`) — Google
+  requires the visible text and the structured data to match, so edit
+  `faqItems` rather than the two places separately. This is what lets
+  Google Rich Results and AI answer engines (ChatGPT browsing, Perplexity,
+  Google AI Overviews) pull structured facts straight from the site
+  instead of guessing from prose.
+- **Outbound citations**: the factual claims about cancer clusters being
+  rare and Ewing sarcoma having no known environmental cause are linked to
+  CDC/ATSDR guidelines and the American Cancer Society, respectively, on
+  `/what-we-know/`. Real citations like this make health-adjacent content
+  more trustworthy to both readers and search engines.
 - **`public/llms.txt`**: a plain-markdown summary of the site for AI tools
   that check for it, following the emerging
   [llms.txt](https://llmstxt.org) convention. Keep its page list in sync
