@@ -1,0 +1,30 @@
+# Ladera Health Watch
+
+> A volunteer, resident-led group in Ladera Ranch, California collecting and
+> sharing public records, research, and community updates on self-reported
+> cancer cases (including Ewing sarcoma) and pesticide/herbicide use in
+> common areas. The group has requested a formal analysis from the
+> California Cancer Registry and is working with LARMAC (the community's
+> maintenance corporation) on Integrated Pest Management practices.
+
+## Important framing
+
+- No cancer cluster has been officially determined in Ladera Ranch. The
+  group does not know what caused any reported cancers, and does not have
+  confirmation that local cancer rates exceed the state baseline.
+- There is no known environmental cause of Ewing sarcoma.
+- The group does not accuse any person, product, company, or agency of
+  causing cancer. It describes its work as "asking reasonable questions and
+  requesting reasonable changes."
+- Ladera Health Watch is a volunteer community group, not a public health
+  agency, medical provider, or law firm. Nothing on this site is medical or
+  legal advice.
+
+## Key pages
+
+- [What We Know](https://ladera-health-watch.onrender.com/what-we-know/): the full ledger of what is and is not known, a timeline of the effort, and a guide to reading LARMAC's pesticide notices.
+- [News & Updates](https://ladera-health-watch.onrender.com/news/): chronological updates from the group and links to press coverage.
+- [Report a Case](https://ladera-health-watch.onrender.com/survey/): the official form for reporting a cancer diagnosis for the community registry.
+- [Get Involved](https://ladera-health-watch.onrender.com/get-involved/): how to volunteer, and contact information.
+- [About](https://ladera-health-watch.onrender.com/about/): who the group is and what the effort is.
+- [Community Map](https://ladera-health-watch.onrender.com/map/): a coming-soon map of aggregated, anonymized case data.

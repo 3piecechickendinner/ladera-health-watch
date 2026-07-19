@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../../site.config';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news');
@@ -18,9 +19,21 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+const postURL = new URL(Astro.url.pathname, Astro.site).toString();
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  datePublished: post.data.date.toISOString(),
+  description: post.data.summary,
+  author: { '@type': 'Organization', name: SITE_NAME },
+  publisher: { '@type': 'Organization', name: SITE_NAME },
+  mainEntityOfPage: postURL,
+};
 ---
 
-<BaseLayout title={post.data.title} description={post.data.summary}>
+<BaseLayout title={post.data.title} description={post.data.summary} structuredData={articleSchema}>
   <article class="mx-auto max-w-2xl px-5 py-10 sm:py-14">
     <p class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sage-500">
       <time datetime={post.data.date.toISOString()}>{dateFormatter.format(post.data.date)}</time>

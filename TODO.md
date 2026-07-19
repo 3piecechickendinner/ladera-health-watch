@@ -11,7 +11,7 @@ grep -rn "TODO" src public astro.config.mjs
 ## Must supply before launch
 
 - [ ] **Site name**: currently "Ladera Health Watch" in `src/site.config.ts` (`SITE_NAME`). Change it there once the group finalizes the name; every page pulls from this one place.
-- [x] **Domain**: set to `https://ladera-health-watch.onrender.com` in `astro.config.mjs` (`site:`), `src/site.config.ts` (`SITE_URL`), and `public/robots.txt` (the `Sitemap:` line). Update all three again once a custom domain is attached. See README section 2 and 3.
+- [x] **Domain**: set to `https://ladera-health-watch.onrender.com` in `astro.config.mjs` (`site:`), `src/site.config.ts` (`SITE_URL`), `public/robots.txt` (the `Sitemap:` line), and `public/llms.txt` (the page URLs). Update all four again once a custom domain is attached. See README section 2 and 3.
 - [x] **Health survey form URL**: set in `src/site.config.ts` (`SURVEY_FORM_URL`).
 - [x] **Volunteer sign-up form URL**: set in `src/site.config.ts` (`VOLUNTEER_FORM_URL`).
 - [x] **Contact email**: set in `src/site.config.ts` (`CONTACT_EMAIL`) to `laderahealthwatch@gmail.com`.
@@ -26,3 +26,17 @@ grep -rn "TODO" src public astro.config.mjs
 - [ ] Decide whether to add privacy-respecting analytics (see README for how to add Plausible).
 - [ ] Add real content to the Community Map page once a mapping approach is chosen.
 - [ ] Double check the timeline dates on `/what-we-know/` stay accurate as the effort progresses.
+
+## Getting found by search engines and AI tools
+
+The technical side (sitemap, structured data, robots.txt, llms.txt) is already
+in place. Two things only a human can do:
+
+- [ ] Submit the sitemap (`/sitemap-index.xml`) to
+      [Google Search Console](https://search.google.com/search-console) and
+      [Bing Webmaster Tools](https://www.bing.com/webmasters) once the site
+      is live on its final domain.
+- [ ] Ask any press covering the group (NBC Los Angeles, future coverage) to
+      link to the site rather than just naming it. Backlinks from real
+      outlets are the biggest lever for both search ranking and whether AI
+      tools cite the site as a source.

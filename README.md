@@ -65,11 +65,11 @@ Once you have a deploy working on the temporary address above:
 4. DNS changes can take anywhere from a few minutes to a few hours to take
    effect. Render/Netlify/Vercel will show a green checkmark once it's live.
 5. Update `site:` in `astro.config.mjs`, `SITE_URL` in `src/site.config.ts`,
-   and the `Sitemap:` line in `public/robots.txt` to the final domain
-   (replacing the temporary `.onrender.com` address if you set one in step
-   2 above). Search results, social media link previews, and the OG image's
-   domain text all depend on this being correct. Re-run `npm run og` after
-   changing it.
+   the `Sitemap:` line in `public/robots.txt`, and the page URLs in
+   `public/llms.txt` to the final domain (replacing the temporary
+   `.onrender.com` address if you set one in step 2 above). Search results,
+   social media link previews, and the OG image's domain text all depend on
+   this being correct. Re-run `npm run og` after changing it.
 
 ## 4. Adding a News & Updates post
 
@@ -145,6 +145,33 @@ any page's title/description:
    card, not a blank/broken image.
 5. Repeat for any other page you expect people to share directly (e.g.
    `/survey/`, `/what-we-know/`).
+
+## Getting found by search engines and AI tools
+
+This is already built in:
+
+- **Sitemap** at `/sitemap-index.xml`, referenced from `public/robots.txt`.
+- **Per-page meta titles/descriptions and Open Graph tags** (see every page's
+  `<BaseLayout title=... description=...>` call).
+- **Structured data (JSON-LD)**: an Organization schema on every page
+  (`src/layouts/BaseLayout.astro`), plus an Article schema on every News &
+  Updates post (`src/pages/news/[slug].astro`). This is what lets Google
+  Rich Results and AI answer engines (ChatGPT browsing, Perplexity, Google AI
+  Overviews) pull structured facts about the site instead of guessing from
+  prose.
+- **`public/llms.txt`**: a plain-markdown summary of the site for AI tools
+  that check for it, following the emerging
+  [llms.txt](https://llmstxt.org) convention. Keep its page list in sync
+  with `NAV_LINKS` in `src/site.config.ts` if pages are added or renamed.
+
+Two things only a human can do:
+
+1. Once the site is live on its final domain, submit the sitemap to
+   [Google Search Console](https://search.google.com/search-console) and
+   [Bing Webmaster Tools](https://www.bing.com/webmasters).
+2. Ask any press covering the group to link to the site rather than just
+   naming it. Backlinks from real outlets are the biggest lever for both
+   search ranking and whether AI tools cite the site as a source.
 
 ## Analytics
 
