@@ -22,6 +22,10 @@ export const CONTACT_EMAIL = 'laderahealthwatch@gmail.com';
 
 export const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/186166214769732';
 
+// Small credit line in the footer.
+export const BUILDER_NAME = 'Databackfill';
+export const BUILDER_URL = 'https://databackfill.com';
+
 // Footer newsletter signup (NewsletterSignup.astro), shared Formspree
 // account across the group's projects.
 export const FORMSPREE_SIGNUP_ACTION = 'https://formspree.io/f/mnjepdzk';
