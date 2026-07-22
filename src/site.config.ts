@@ -33,6 +33,13 @@ export const FORMSPREE_SIGNUP_ACTION = 'https://formspree.io/f/mnjepdzk';
 // TODO: confirm current LARMAC IPM / spray-notice page URL (laderalife.com structure may change).
 export const LARMAC_IPM_NOTICES_URL = 'https://www.laderalife.com/TODO-REPLACE-WITH-IPM-NOTICES-PATH';
 
+// A petition started by residents within the group, asking LARMAC to
+// suspend certain pesticide products. Shared as an external resident action,
+// not phrased in the site's own voice as an endorsement of its specific
+// claims (see the framing on /get-involved/ and the News post about it).
+export const PETITION_URL =
+  'https://www.change.org/p/protect-our-community-ban-toxic-pesticides-in-ladera-ranch';
+
 // Nav is deliberately kept short for mobile readers arriving from Facebook.
 // Home is reached via the site name in the header, not a nav item.
 // Pesticide Notices lives on /what-we-know/ as a section; Community Map

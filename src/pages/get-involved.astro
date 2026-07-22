@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { VOLUNTEER_FORM_URL, CONTACT_EMAIL } from '../site.config';
+import { VOLUNTEER_FORM_URL, CONTACT_EMAIL, PETITION_URL } from '../site.config';
 
 const needs = [
   {
@@ -52,6 +52,26 @@ const needs = [
     >
       Sign up to volunteer ↗
     </a>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-5 py-6">
+    <div class="border border-oak-700/25 bg-paper-50 p-6">
+      <h2 class="font-display text-xl font-semibold text-oak-900">Sign the petition</h2>
+      <p class="mt-2 text-base leading-relaxed text-oak-700">
+        Residents within our group have started a petition asking LARMAC to suspend certain
+        pesticide products and adopt further Integrated Pest Management practices. We're sharing
+        it because residents asked us to, not because Ladera Health Watch has independently
+        verified every claim it makes. Signing it, like everything here, is voluntary.
+      </p>
+      <a
+        href={PETITION_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-block border border-gold-600 bg-gold-600 px-5 py-3 font-semibold text-paper-50 no-underline hover:bg-gold-700"
+      >
+        Sign the petition ↗
+      </a>
+    </div>
   </section>
 
   <section class="mx-auto max-w-3xl px-5 py-6">
