@@ -1,7 +1,8 @@
 ---
-import { FORMSPREE_SIGNUP_ACTION, SITE_URL } from '../site.config';
-
-const thanksURL = new URL('/thanks/', SITE_URL).toString();
+// Flodesk-hosted signup form. `is:inline` on both scripts is required: these
+// are third-party vendor scripts that must run exactly as provided (module/
+// nomodule loader pair, then the form init call), not be bundled or
+// transformed by Astro.
 ---
 
 <div class="text-center">
@@ -9,32 +10,9 @@ const thanksURL = new URL('/thanks/', SITE_URL).toString();
     Stay Informed. Stay Involved.
   </h2>
 
-  <form
-    action={FORMSPREE_SIGNUP_ACTION}
-    method="POST"
-    class="mx-auto mt-5 flex max-w-md flex-col gap-3 sm:flex-row"
-  >
-    <label for="newsletter-email-input" class="sr-only">Email address</label>
-    <input
-      id="newsletter-email-input"
-      type="email"
-      name="email"
-      required
-      placeholder="you@example.com"
-      class="min-w-0 flex-1 border border-oak-700/30 bg-paper-50 px-4 py-3 text-base text-oak-900 placeholder:text-sage-500"
-    />
-    <button
-      type="submit"
-      class="border border-gold-600 bg-gold-600 px-5 py-3 font-semibold text-paper-50 hover:bg-gold-700 sm:shrink-0"
-    >
-      Sign up
-    </button>
-
-    <input type="hidden" name="_subject" value="New updates signup" />
-    <input type="hidden" name="_next" value={thanksURL} />
-    {/* Formspree honeypot: real visitors never fill this in, bots often do. */}
-    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-  </form>
+  <div class="mx-auto mt-5 max-w-md">
+    <div id="fd-form-6a667e9848b25897cf9acacc"></div>
+  </div>
 
   <p class="mx-auto mt-4 max-w-[55ch] text-sm leading-relaxed text-oak-700">
     Sign up to receive updates on health and environmental issues affecting Orange County,
@@ -42,3 +20,32 @@ const thanksURL = new URL('/thanks/', SITE_URL).toString();
     No spam, just important updates from concerned residents.
   </p>
 </div>
+
+<script is:inline>
+  (function (w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function () {
+      (w[n].q = w[n].q || []).push(arguments);
+    };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t);
+    sm.async = true;
+    sm.type = 'module';
+    sm.src = h + s + '.mjs' + v;
+    f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t);
+    sn.async = true;
+    sn.noModule = true;
+    sn.src = h + s + '.js' + v;
+    f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+
+<script is:inline>
+  window.fd('form', {
+    formId: '6a667e9848b25897cf9acacc',
+    containerEl: '#fd-form-6a667e9848b25897cf9acacc',
+  });
+</script>

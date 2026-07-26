@@ -26,10 +26,6 @@ export const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/1861662147697
 export const BUILDER_NAME = 'Databackfill';
 export const BUILDER_URL = 'https://databackfill.com';
 
-// Footer newsletter signup (NewsletterSignup.astro), shared Formspree
-// account across the group's projects.
-export const FORMSPREE_SIGNUP_ACTION = 'https://formspree.io/f/mnjepdzk';
-
 // TODO: confirm current LARMAC IPM / spray-notice page URL (laderalife.com structure may change).
 export const LARMAC_IPM_NOTICES_URL = 'https://www.laderalife.com/TODO-REPLACE-WITH-IPM-NOTICES-PATH';
 
