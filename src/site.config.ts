@@ -40,6 +40,13 @@ export const LARMAC_IPM_NOTICES_URL = 'https://www.laderalife.com/TODO-REPLACE-W
 export const PETITION_URL =
   'https://www.change.org/p/protect-our-community-ban-toxic-pesticides-in-ladera-ranch';
 
+// USC-organized Givebutter campaign funding independent USC & UCI research
+// into childhood cancer and environmental factors, focused on Ladera Ranch.
+// Verified July 2026: real, active campaign, matches the title/organizer
+// described on DonateCallout.astro.
+export const DONATE_URL =
+  'https://givebutter.com/fund-research-for-the-future-of-learning-snig35?s=sAMZWA';
+
 // Nav is deliberately kept short for mobile readers arriving from Facebook.
 // Home is reached via the site name in the header, not a nav item.
 // Pesticide Notices lives on /what-we-know/ as a section; Community Map
@@ -50,5 +57,6 @@ export const NAV_LINKS = [
   { href: '/news/', label: 'News' },
   { href: '/survey/', label: 'Report a Case' },
   { href: '/get-involved/', label: 'Get Involved' },
+  { href: '/donate/', label: 'Donate' },
   { href: '/about/', label: 'About' },
 ];

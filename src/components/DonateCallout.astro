@@ -1,0 +1,27 @@
+---
+// Shared by the homepage and /donate/ so the copy can't drift between them.
+import { DONATE_URL } from '../site.config';
+---
+
+<div class="border border-oak-700/25 bg-paper-50 p-6 sm:p-8">
+  <h2 class="font-display text-xl font-semibold leading-snug text-oak-900 sm:text-2xl">
+    Donate to fund research by USC &amp; UCI for Childhood Cancer &amp; the Environment, with focus
+    on Ladera Ranch
+  </h2>
+  <p class="mt-4 max-w-3xl text-base leading-relaxed text-oak-700">
+    Ladera Health Watch is supporting independent research by USC &amp; UCI focused specifically
+    on childhood cancer and environmental factors in Ladera Ranch. Donations will help
+    researchers investigate potential preventable causes and better understand the health
+    concerns affecting our community. We hope the findings may also help inform future research
+    and prevention efforts across Orange County and in communities nationwide facing similar
+    concerns.
+  </p>
+  <a
+    href={DONATE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-5 inline-block border border-gold-600 bg-gold-600 px-6 py-3 font-semibold text-paper-50 no-underline hover:bg-gold-700"
+  >
+    Support Ladera's Cancer Research ↗
+  </a>
+</div>
