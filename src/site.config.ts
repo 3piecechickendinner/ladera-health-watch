@@ -18,7 +18,7 @@ export const SURVEY_FORM_URL =
 export const VOLUNTEER_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfQRYig-IQ7e-6iE0aSLAUW-lP4a3a3l6v_AIZ3jLXU9bY7Pg/viewform';
 
-export const CONTACT_EMAIL = 'laderahealthwatch@gmail.com';
+export const CONTACT_EMAIL = 'info@ochealthwatch.org';
 
 export const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/186166214769732';
 
